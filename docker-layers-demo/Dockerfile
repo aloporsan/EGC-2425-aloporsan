@@ -1,7 +1,3 @@
-
-
-CMD ["bash"]
-
 # Usar una imagen base de Python
 FROM ubuntu:latest
 
