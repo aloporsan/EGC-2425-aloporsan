@@ -17,6 +17,10 @@ services:
     command: [ "sh", "-c", "sh /app/docker/entrypoints/development_entrypoint.sh" ]
     networks:
       - uvlhub_network
+    environment: 
+      - FLASK_DEBUG=False 
+      - FLASK_ALLOWED_HOSTS=localhost,example.com 
+
 
   db:
     container_name: mariadb_container
@@ -45,9 +49,11 @@ services:
       - web
     networks:
       - uvlhub_network
-
+    
 volumes:
   db_data:
 
 networks:
   uvlhub_network:
+
+
